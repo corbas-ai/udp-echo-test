@@ -1,9 +1,10 @@
-# Test simple UDP client-server timings in some Languages
+# Test the simple UDP client-server 'echo' timing in some Languages
 
 ## How
 
-"requestor.c" is client C-program, create UDP socket (AF\_INET, SOCK\_DGRAM),
-than for server endpoint, 4 times per second, it sends, wait and receive udp packet
+The "requestor.c" is client program which create UDP socket (AF\_INET, SOCK\_DGRAM),
+than for particular server endpoint, 4 times per second, client sends wait and receive udp packet
+in this way
 
 npackets++ try:
 
@@ -22,11 +23,12 @@ npackets++ try:
 
 ## Results
 
-* All tests on the localhost
+* All tests runs on the localhost
 * $ uname -m -r
    - 6.8.0-64-generic x86_64
-* Pack size 2048 bytes
-   (fragmented by Linux kernel net stack)
+* Packet size 2048 bytes
+   (fragmented by Linux kernel's net stack)
+* All pairs requestor <> server* doing in parallel
 
 | No | Environment     | Kind            | NPackets | t try     | src file           |
 |----|-----------------|-----------------|----------|-----------|--------------------|
@@ -37,3 +39,12 @@ npackets++ try:
 | 5. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.scm  |
 | 6. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
 |    |                 |                 |          |           |                    |
+
+
+## Next
+
+I'll try Rhombus, Java maybe something else
+
+## Remark
+
+UDP still in use today, fo example SNMP, NTP, RSyslog, and gazillion of proprietary [oneway] cast|multicast protocols.
