@@ -6,21 +6,22 @@
 than for server endpoint 4 times per second it sends wait and receive udp packet
 
 npackets++ try:
-_t.start
-[requestor] -> (packet)-> [server-endpoint]
-...
-[server-endpoint] ->(same packet echo answer) -> [requestor]
-_t.end
+    _t.start
+    [requestor] -> (packet)-> [server-endpoint]
+    ...
+    [server-endpoint] ->(same packet echo answer) -> [requestor]
+    _t.end
 
-t.acc += t.end-t.start
-t.try = t.acc / n
+    t.acc += t.end-t.start
+
+    t.try = t.acc / n
 
 
 ## Results
 
 * All tests on the localhost
 * $ uname -m -r
-    6.8.0-64-generic x86_64
+   - 6.8.0-64-generic x86_64
 * Pack size 2048 bytes
    (fragmented by Linux kernel net stack)
 
