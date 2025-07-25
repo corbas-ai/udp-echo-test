@@ -16,9 +16,9 @@ npackets++ try:
 
     _t.end
 
-    t.acc += t.end-t.start
+    t.acc += t.end - t.start
 
-    t.try = t.acc / n
+    t.try = t.acc / npackets
 
 
 ## Test environment
