@@ -34,6 +34,8 @@
 
 ) ;; module end
 
+;; to install dependencies
+;; $ chicken-install udp
 
 ;; to compile:
 ;; $ csc -s -J -O3 server-chicken.scm
