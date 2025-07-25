@@ -12,6 +12,7 @@ npackets++ try:
     [requestor] -> (packet)-> [server-endpoint]
     ...
     [server-endpoint] ->(same packet echo answer) -> [requestor]
+
     _t.end
 
     t.acc += t.end-t.start
