@@ -21,7 +21,7 @@ npackets++ try:
     t.try = t.acc / n
 
 
-## Results
+## Test environment
 
 * All tests runs on the localhost
 * $ uname -m -r
@@ -29,6 +29,8 @@ npackets++ try:
 * Packet size 2048 bytes
    (fragmented by Linux kernel's net stack)
 * All pairs requestor <> server* doing in parallel
+
+## Results
 
 | No | Environment     | Kind            | NPackets | t try     | src file           |
 |----|-----------------|-----------------|----------|-----------|--------------------|
