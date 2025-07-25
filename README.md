@@ -2,11 +2,13 @@
 
 ## How
 
-"requestor.c" is client C-program, mekes UDP socket (AF\_INET, SOCK\_DRGAM) 
-than for server endpoint 4 times per second it sends wait and receive udp packet
+"requestor.c" is client C-program, create UDP socket (AF\_INET, SOCK\_DGRAM),
+than for server endpoint, 4 times per second, it sends, wait and receive udp packet
 
 npackets++ try:
+
     _t.start
+
     [requestor] -> (packet)-> [server-endpoint]
     ...
     [server-endpoint] ->(same packet echo answer) -> [requestor]
