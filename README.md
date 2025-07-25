@@ -38,7 +38,7 @@ npackets++ try:
 | 2. | CHICKEN 5.4.0   | compiled module | 137000   | 0.000124s | server-chicken.scm |
 | 3. | Gambit 4.9.7    | compiled module | 137000   | 0.000118s | server-gambit.scm  |
 | 4. | Guile 3.0.10    | interpreted     | 151000   | 0.000092s | server-guile.scm   |
-| 5. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.scm  |
+| 5. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.rkt  |
 | 6. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
 |    |                 |                 |          |           |                    |
 
