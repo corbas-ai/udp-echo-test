@@ -47,6 +47,6 @@ npackets++ try:
 
 I'll try Rhombus, Java maybe something else
 
-## Remark
+## Side note
 
-UDP still in use today, fo example SNMP, NTP, RSyslog, and gazillion of proprietary [oneway] cast|multicast protocols.
+UDP still in use today, for example SNMP, NTP, RSyslog and over 9000 of proprietary [oneway] cast|multicast protocols.
