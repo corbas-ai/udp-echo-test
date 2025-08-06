@@ -1,0 +1,30 @@
+#lang rhombus
+
+import:
+  rhombus/network
+
+export:
+  test
+
+fun make_srv(host::String, port::NonnegInt):
+   guard.let udp = network.UDP(~family_host: host)
+   | error(0,0, "Fail")
+   udp.bind(~host: host, ~port: port)
+   when !udp.is_bound() | error(0,0, "Error bound srv!")
+   udp
+
+
+fun srv(s :~ network.UDP):
+  let pack = Bytes.make(4096)
+  recur net_loop(i=1):
+    let (pack_len, from, from_port) = s.receive(pack)
+    s.send_to(~host: from, ~port: from_port, pack, 0, pack_len)
+    print(i,  ".read ",  pack_len, " bytes from ", from, "\r" )
+    net_loop(i+1)
+
+
+fun test():
+  let host = "localhost"
+  let port = 4555
+  Closeable.let s = make_srv(host, port)
+  srv(s)
