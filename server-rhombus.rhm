@@ -1,6 +1,7 @@
 #lang rhombus
 
 import:
+  rhombus/cmdline open
   rhombus/network
 
 export:
@@ -10,7 +11,9 @@ fun make_srv(host::String, port::NonnegInt):
    guard.let udp = network.UDP(~family_host: host)
    | error(0,0, "Fail")
    udp.bind(~host: host, ~port: port)
-   when !udp.is_bound() | error(0,0, "Error bound srv!")
+   when !udp.is_bound()
+   | error(0,0, "Error bound srv!")
+   println("Make Rhombus UDP server " +& host +& ":" +& port)
    udp
 
 
@@ -27,4 +30,18 @@ fun test():
   let host = "localhost"
   let port = 4555
   Closeable.let s = make_srv(host, port)
+  srv(s)
+
+
+module main:
+  def config:
+    parse:
+      ~init {#'args: "localhost:4555"}
+      args:
+        ~init: {#'addr: "localhost:4555"}
+        state[#'addr] := state[#'args]
+
+
+  let [host, port] = config[#'addr].split(":")
+  Closeable.let s = make_srv(host, String.maybe_to_int(port))
   srv(s)
