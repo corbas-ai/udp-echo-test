@@ -1,7 +1,7 @@
 (module server-chicken
     (test)
 
-  (import (scheme base)
+  (import scheme
           (chicken base)
           udp)
 
