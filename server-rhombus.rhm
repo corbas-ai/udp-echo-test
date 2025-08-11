@@ -33,15 +33,16 @@ fun test():
   srv(s)
 
 
+def make_config:
+    parser:
+      args addr ...
+
+
 module main:
-  def config:
-    parse:
-      ~init {#'args: "localhost:4555"}
-      args:
-        ~init: {#'addr: "localhost:4555"}
-        state[#'addr] := state[#'args]
-
-
-  let [host, port] = config[#'addr].split(":")
+  let args = make_config.parse()[#'args]
+  let mutable addr = "localhost:4555"
+  when args.length() > 0
+  | addr := args[0]
+  let [host, port] = addr.split(":")
   Closeable.let s = make_srv(host, String.maybe_to_int(port))
   srv(s)

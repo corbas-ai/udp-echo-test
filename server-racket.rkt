@@ -30,5 +30,7 @@
       (lambda () (udp-close s)))))
 
 
+(module* main #f
+  (test))
 ;; to run:
-;; $ racket -t server-racket.rkt -e "(test)"
+;; $ racket -t server-racket.rkt
