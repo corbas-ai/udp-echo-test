@@ -18,10 +18,12 @@ fun make_srv(host::String, port::NonnegInt):
 
 
 fun srv(s :~ network.UDP):
-  let pack = Bytes.make(4096)
+  let packLen = 4096
+  let pack = Bytes.make(packLen)
   recur net_loop(i=1):
-    let (pack_len, from, from_port) = s.receive(pack)
-    s.send_to(~host: from, ~port: from_port, pack, 0, pack_len)
+    let (pack_len, from, from_port) = s.receive(pack, 0, packLen)
+    s.send_to(~host: from, ~port: from_port,
+              pack, 0, pack_len)
     print(i,  ".read ",  pack_len, " bytes from ", from, "\r" )
     net_loop(i+1)
 
@@ -46,3 +48,7 @@ module main:
   let [host, port] = addr.split(":")
   Closeable.let s = make_srv(host, String.maybe_to_int(port))
   srv(s)
+
+
+// run:
+// $ racket server-rhombus.rkt localhost:4577

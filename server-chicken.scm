@@ -28,7 +28,7 @@
   (define (test)
     (let ((s #f))
       (dynamic-wind
-          (lambda () (set! s (make-server "localhost" 4567)))
+          (lambda () (set! s (make-server "localhost" 4568)))
           (lambda () (srv s))
           (lambda () (udp-close-socket s)))))
 
