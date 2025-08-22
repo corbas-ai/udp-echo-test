@@ -37,11 +37,11 @@ npackets++ try:
 | 1. | GCC 13.3        | compiled prog   | 144000   | 0.000078s | srv.c              |
 | 2. | Guile 3.0.10    | interpreted     | 151000   | 0.000092s | server-guile.scm   |
 | 3. | Gambit 4.9.7    | compiled module | 137000   | 0.000118s | server-gambit.scm  |
-| 4. | CHICKEN 5.4.0   | compiled module | 137000   | 0.000124s | server-chicken.scm |
-| 5. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
-| 6. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.rkt  |
-| 7. | Rhombus         | interpreted     | 111000   | 0.000339s | server-rhombus.rhm |
-| 8. | Java 21.0.8     | interpreted     | 131000   | 0.000118s | ServerJava.java    |
+| 4. | Java 21.0.8     | interpreted     | 131000   | 0.000118s | ServerJava.java    |
+| 5. | CHICKEN 5.4.0   | compiled module | 137000   | 0.000124s | server-chicken.scm |
+| 6. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
+| 7. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.rkt  |
+| 8. | Rhombus         | interpreted     | 111000   | 0.000339s | server-rhombus.rhm |
 
 ## Next
 
