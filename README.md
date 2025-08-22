@@ -41,11 +41,11 @@ npackets++ try:
 | 5. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
 | 6. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.rkt  |
 | 7. | Rhombus         | interpreted     | 111000   | 0.000339s | server-rhombus.rhm |
-
+| 8. | Java 21.0.8     | interpreted     | 131000   | 0.000118s | ServerJava.java    |
 
 ## Next
 
-I'll try Java, Go maybe something else
+I'll try Go, Ada maybe something else
 
 ## Side note
 
