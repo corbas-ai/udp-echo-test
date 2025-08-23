@@ -1,4 +1,4 @@
-# Test the simple UDP client-server 'echo' timing in some Languages
+ Test the simple UDP client-server 'echo' timing in some Languages
 
 ## How
 
@@ -32,20 +32,21 @@ npackets++ try:
 
 ## Results
 
-| No | Environment     | Kind            | NPackets | t try     | src file           |
-|----|-----------------|-----------------|----------|-----------|--------------------|
-| 1. | GCC 13.3        | compiled prog   | 144000   | 0.000078s | srv.c              |
-| 2. | Guile 3.0.10    | interpreted     | 151000   | 0.000092s | server-guile.scm   |
-| 3. | Gambit 4.9.7    | compiled module | 137000   | 0.000118s | server-gambit.scm  |
-| 4. | Java 21.0.8     | interpreted     | 131000   | 0.000118s | ServerJava.java    |
-| 5. | CHICKEN 5.4.0   | compiled module | 137000   | 0.000124s | server-chicken.scm |
-| 6. | Python 3.12.3   | interpreted     | 102000   | 0.000139s | server-python.py   |
-| 7. | Racket 8.17[cs] | interpreted     | 151000   | 0.000332s | server-racket.rkt  |
-| 8. | Rhombus         | interpreted     | 111000   | 0.000339s | server-rhombus.rhm |
+| No | Environment     | Kind           | NPackets | t try     | src file           |
+|----|-----------------|----------------|----------|-----------|--------------------|
+| 1. | GCC 13.3        | compiled       | 144000   | 0.000078s | srv.c              |
+| 2. | Guile 3.0.10    | interpreted    | 151000   | 0.000092s | server-guile.scm   |
+| 3. | Gambit 4.9.7    | compiled mod.  | 137000   | 0.000118s | server-gambit.scm  |
+| 4. | Java 21.0.8     | interpreted    | 131000   | 0.000118s | ServerJava.java    |
+| 5. | Go 1.23         | compiled prog. | 114000   | 0.000119s | server-go.go       |
+| 6. | CHICKEN 5.4.0   | compiled mod.  | 137000   | 0.000124s | server-chicken.scm |
+| 7. | Python 3.12.3   | interpreted    | 102000   | 0.000139s | server-python.py   |
+| 8. | Racket 8.17[cs] | interpreted    | 151000   | 0.000332s | server-racket.rkt  |
+| 9. | Rhombus         | interpreted    | 111000   | 0.000339s | server-rhombus.rhm |
 
 ## Next
 
-I'll try Go, Ada maybe something else
+I'll try Gauche  maybe something else
 
 ## Side note
 
