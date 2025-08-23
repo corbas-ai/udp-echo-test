@@ -32,7 +32,7 @@ public class ServerJava {
             }
         }
         catch(Exception e){
-            System.err.println("Потерял управление КП3, на имитаторе");
+            System.err.println("Java UDP server fail: " + e);
         }
     }
 
