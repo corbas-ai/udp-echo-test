@@ -7,7 +7,9 @@
           (rnrs bytevectors gnu))
 
   (begin
-    (define pack-size 2024)
+    #;(define pack-size 2024)  ;; typo
+    (define pack-size 4096)
+
 
     (define make-server
       (lambda (host port)

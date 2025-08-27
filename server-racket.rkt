@@ -22,11 +22,19 @@
       (loop (+ 1 i)))))
 
 
+(define (srv-zero-logout s)
+  (define pack (make-bytes pack-size))
+  (let loop ()
+    (let*-values ([(r from from-port) (udp-receive! s pack)])
+      (udp-send-to* s from from-port pack 0 r))
+      (loop)))
+
+
 (define (test)
   (let ((s #f))
     (dynamic-wind
       (lambda () (set! s (make-server "localhost" 4568)))
-      (lambda () (srv s))
+      (lambda () (srv-zero-logout s))
       (lambda () (udp-close s)))))
 
 
