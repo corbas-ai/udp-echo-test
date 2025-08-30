@@ -22,6 +22,14 @@
       (loop (+ 1 i)))))
 
 
+(define (test [host "localhost"] [port 4568])
+  (let ((s #f))
+    (dynamic-wind
+      (lambda () (set! s (make-server host port)))
+      (lambda () (srv s))
+      (lambda () (udp-close s)))))
+
+
 (define (srv-zero-logout s)
   (define pack (make-bytes pack-size))
   (let loop ()
@@ -30,7 +38,7 @@
       (loop)))
 
 
-(define (test)
+(define (test-zero)
   (let ((s #f))
     (dynamic-wind
       (lambda () (set! s (make-server "localhost" 4568)))
