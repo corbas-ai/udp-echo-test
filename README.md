@@ -43,7 +43,8 @@ npackets++ try:
 | 7.  | CHICKEN 5.4.0   | compiled mod. | 137000   | 0.000124s | server-chicken.scm |
 | 8.  | Python 3.12.3   | interpreted   | 102000   | 0.000139s | server-python.py   |
 | 9.  | Racket 8.17[cs] | interpreted   | 151000   | 0.000332s | server-racket.rkt  |
-| 10. | Rhombus         | interpreted   | 111000   | 0.000339s | server-rhombus.rhm |
+| 10. | Racket 9.0      | interpreted   | 114000   | 0.000174s | server-racket.rkt  |
+| 11. | Rhombus         | interpreted   | 111000   | 0.000339s | server-rhombus.rhm |
 
 ## Next
 
